@@ -1,0 +1,172 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.blind {
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+}
+
+.container {
+	max-width: 940px;
+	margin: 0 auto;
+}
+
+.container h1 {
+	margin-top: 10px;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.slider {
+	overflow: hidden;
+	position: relative;
+	height: 529px;
+}
+
+.slider .auto {
+	position: absolute;
+	top: 10px;
+	right: 8px;
+	z-index: 20;
+}
+
+.slider .auto a {
+	display: inline-block;
+	width: 31px;
+	height: 30px;
+	cursor: pointer;
+}
+
+.slider .auto .play {
+	background: url('../img/play.png') no-repeat 50% 50%;
+}
+
+.slider .auto .stop {
+	display: none;
+	background: url('../img/pause.png') no-repeat 50% 50%;
+}
+
+.slider .navi {
+	position: absolute;
+	margin: auto 0;
+	top: 0;
+	bottom: 0;
+	width: 64px;
+	height: 64px;
+	background-size: 64px 64px;
+	z-index: 20;
+	cursor: pointer;
+}
+
+.slider .navi.prev {
+	left: 10px;
+	background: url('../img/prev.png') no-repeat 0 0;
+}
+
+.slider .navi.next {
+	right: 10px;
+	background: url('../img/next.png') no-repeat 0 0;
+}
+
+.slider .navi span {
+	color: white;
+}
+
+.slider .slides li {
+	position: absolute;
+	width: 100%;
+	height: 529px;
+	background-position: 50% 50%;
+	transition: transform 0.2s ease-in-out;
+	transform: translateX(0%);
+	z-index: -10;
+	opacity: 0;
+}
+
+.slider .slides li.current {
+	opacity: 1;
+	z-index: 10;
+}
+
+.slider .slides li.prev {
+	opacity: 1;
+	transform: translateX(-100%);
+}
+
+.slider .slides li.next {
+	opacity: 1;
+	transform: translateX(100%);
+}
+
+.slider .slides li.hidden {
+	opacity: 0;
+}
+
+.slider .pager {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 9px;
+	text-align: center;
+	z-index: 10;
+}
+
+.slider .pager a {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin: 0 4px;
+	border-radius: 12px;
+	border: 1px solid #fff;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.slider .pager a.current {
+	border-width: 1px;
+	background-color: #ffffff;
+}
